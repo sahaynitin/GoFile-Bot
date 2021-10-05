@@ -21,8 +21,7 @@ Bot = Client(
 @Bot.on_message(filters.private & filters.command("start"))
 async def start(bot, update):
     await update.reply_text(
-        text=f"""
-Hey {}
+        text="""Hey {}
 
 Welcome to {}
 
