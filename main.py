@@ -21,7 +21,54 @@ Bot = Client(
 @Bot.on_message(filters.private & filters.command("start"))
 async def start(bot, update):
     await update.reply_text(
-        text=f"Hello {update.from_user.mention}, Please send a media for gofile.io stream link.\n\nMade by @FayasNoushad",
+        text=f"""
+Hey {}
+
+Welcome to {}
+
+Using this bot you can get id of any group, user, bot, channel and even stickers with inline mode.
+
+Use below buttons to learn more !
+
+By @StarkBots
+    """
+
+    # Home Button
+    home_buttons = [
+        [InlineKeyboardButton(text="🏠 Return Home 🏠", callback_data="home")],
+    ]
+
+    # Rest Buttons
+    buttons = [
+        [InlineKeyboardButton("✨ Bot Status and More Bots ✨", url="https://t.me/StarkBots/7")],
+        [
+            InlineKeyboardButton("How to Use ❔", callback_data="help"),
+            InlineKeyboardButton("🎪 About 🎪", callback_data="about")
+        ],
+        [InlineKeyboardButton("♥ More Amazing bots ♥", url="https://t.me/StarkBots")],
+        [InlineKeyboardButton("🎨 Support Group 🎨", url="https://t.me/StarkBotsChat")],
+    ]
+
+    # Help Message
+    HELP = """
+**Help & Features**
+
+1) Send any message to get your ID.
+2) Forward any message from any user/bot/channel or anonymous admins to get ID.
+3) Send any sticker to get sticker id.
+4) Use Inline Mode to send your ID in any chat.
+5) Add in group / channel to get ID.
+6) Use /id command:
+- in private: To get ID through username
+- in group/channel: To get ID of that chat. 
+
+✨ **Available Commands** ✨
+
+/id - Get ID
+/about - About The Bot
+/help - This Message
+/start - Start the Bot
+    """",
         disable_web_page_preview=True,
         quote=True
     )
