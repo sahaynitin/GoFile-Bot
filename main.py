@@ -21,7 +21,7 @@ Bot = Client(
 @Bot.on_message(filters.private & filters.command("start"))
 async def start(bot, update):
     await update.reply_text(
-        text=f"Hey {update.from_user.mention},              I  am Fastest Media Uploader to Web GoFile.io .
+        text=f"Hey {update.from_user.mention},I  am Fastest Media Uploader to Web GoFile.io .
 
 Send me a Media to get started ! .\n\nMade by @Tellybots_4u",
         disable_web_page_preview=True,
